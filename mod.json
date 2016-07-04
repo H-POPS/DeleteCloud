@@ -2,7 +2,7 @@
   "BaseDir": "",
   "CompilerVersion": "v3.5",
   "IsDevelopment": false,
-  "IsEnabled": false,
+  "IsEnabled": true,
   "Name": "DisableCloud",
   "Project": "DisableCloud.csproj",
   "Dependencies": null
