@@ -16,6 +16,7 @@ public class ToggleCloud : MonoBehaviour
     {
         if (SSCS == null)
         {
+            if(FindObjectOfType<ScreenSpaceCloudShadow>() != null)
             SSCS = FindObjectOfType<ScreenSpaceCloudShadow>().GetComponent<ScreenSpaceCloudShadow>();
         }
         else
