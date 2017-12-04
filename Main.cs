@@ -11,7 +11,6 @@ namespace HelloMod
             _go = new GameObject();
 
             ToggleCloud TC = _go.AddComponent<ToggleCloud>();
-            TC.DisableClouds();
         }
 
         public void onDisabled()

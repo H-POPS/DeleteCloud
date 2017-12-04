@@ -6,11 +6,25 @@ using UnityEngine;
 
 public class ToggleCloud : MonoBehaviour
 {
-    internal void DisableClouds()
+    ScreenSpaceCloudShadow SSCS;
+    void Start()
     {
-        ScreenSpaceCloudShadow SSCS = FindObjectOfType<ScreenSpaceCloudShadow>().GetComponent<ScreenSpaceCloudShadow>();
-        SSCS.cloudiness = 0;
-        SSCS.enabled = false;
+        SSCS = FindObjectOfType<ScreenSpaceCloudShadow>().GetComponent<ScreenSpaceCloudShadow>();
+    }
 
+    void Update()
+    {
+        if (SSCS == null)
+        {
+            SSCS = FindObjectOfType<ScreenSpaceCloudShadow>().GetComponent<ScreenSpaceCloudShadow>();
+        }
+        else
+        {
+            SSCS.cloudiness = 0;
+            SSCS.shadowColor = new Color(0, 0, 0, 0);
+            SSCS.shadowIntensity = 0;
+            SSCS.Refresh();
+            Destroy(SSCS);
+        }
     }
 }
